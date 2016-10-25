@@ -65,39 +65,6 @@ WHERE guestcost >=10;
 
 /*Q11. Produce a count of the number of recommendations each member has made. Order by member ID.
 
-I struggled with this question a bit. It all had to do with the GROUP BY clause.
-
-I couldn't possibly use a code like this:
-
-SELECT COUNT(recommendedby), memid
-FROM cd.members
-WHERE recommendedby IS NOT NULL
-ORDER BY memid;
-
-As it will produce the following error:
-
-ERROR:  column "members.memid" must appear in the GROUP BY clause or be used in an aggregate function
-LINE 1: SELECT COUNT(recommendedby), memid
-                                     ^
-
-********** Error **********
-
-ERROR: column "members.memid" must appear in the GROUP BY clause or be used in an aggregate function
-SQL state: 42803
-Character: 30
-
-Tips:
-
-1. DO NOT include memid as part of the SELECT statement as it will have to be included as an aggregate function (doesn't make sense as we are only counting the recommendations and not the members themselves)
-
-2. Also, keep in mind that the field recommendedby DOES CONTAIN member ids (member ids of the members who made recommendations) – so we are sorting the data out NOT based on memid but based on recommendedby. This is what Jose meant by saying sort by member id. 
-
-3. There are some members who did not make recommendations. So, keep them out of the result by using IS NOT NULL 
-                                                                                                                     
-4. ORDER BY and GROUP BY the field recommendedby or you'll get an error!
-
-5. We need a COUNT here (to count the number of recommendations made by members and the IS NOT NULL is to prevent SQL from counting the columns with NULL values*/
-
 SELECT COUNT(*), recommendedby
 FROM cd.members
 WHERE recommendedby IS NOT NULL
@@ -130,7 +97,3 @@ FROM cd.bookings
 INNER JOIN cd.facilities ON cd.bookings.facid = cd.facilities.facid
 WHERE extract(month from starttime) = 09 AND extract(day from starttime) = 21 AND name ILIKE '%Tennis Court%'
 ORDER BY extract(hour from starttime) || ' : ' || extract(minute from starttime);
-
-
-
-

@@ -8,17 +8,17 @@ The first data set is the data base of a DVD rental store.
 
 There are 15 tables in the DVD Rental database:
 
-actor – stores actors data including first name and last name.
-film – stores films data such as title, release year, length, rating, etc.
-film_actor – stores the relationships between films and actors.
-category – stores film’s categories data.
-film_category- stores the relationships between films and categories.
-store – contains the stores data including manager staff and address.
-inventory – stores inventory data.
-rental – stores rental data.
-payment – stores customer’s payments.
-staff – stores staff data.
-customer – stores customers data.
-address – stores address data for staff and customers
-city – stores the city names.
-country – stores the country names.
+1. actor – stores actors data including first name and last name.
+2. film – stores films data such as title, release year, length, rating, etc.
+3. film_actor – stores the relationships between films and actors.
+4. category – stores film’s categories data.
+5. film_category- stores the relationships between films and categories.
+6. store – contains the stores data including manager staff and address.
+7. inventory – stores inventory data.
+8. rental – stores rental data.
+9. payment – stores customer’s payments.
+10. staff – stores staff data.
+11. customer – stores customers data.
+12. address – stores address data for staff and customers
+13. city – stores the city names.
+14. country – stores the country names.

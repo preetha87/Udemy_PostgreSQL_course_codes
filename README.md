@@ -1,1 +1,0 @@
-# Udemy_PostgreSQL_course_codes
